@@ -1,3 +1,7 @@
+import 'package:emam_zaman/screen/doa.dart';
+import 'package:emam_zaman/screen/namaz_screen.dart';
+import 'package:emam_zaman/screen/salavat.dart';
+import 'package:emam_zaman/screen/tasbih.dart';
 import 'package:flutter/material.dart';
 
 class AdabScreen extends StatelessWidget {
@@ -42,6 +46,12 @@ class AdabScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 15, bottom: 15),
                       child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const NamazScreen(),
+                          ),
+                        ),
                         child: Container(
                           width: size.width / 2.5,
                           height: size.height / 3.8,
@@ -96,6 +106,12 @@ class AdabScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 15),
                       child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const DoaScreen(),
+                          ),
+                        ),
                         child: Container(
                           width: size.width / 2.5,
                           height: size.height / 3.8,
@@ -161,6 +177,12 @@ class AdabScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const TasbihScreen(),
+                          ),
+                        ),
                         child: Container(
                           width: size.width / 2.5,
                           height: size.height / 3.8,
@@ -216,57 +238,65 @@ class AdabScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      width: size.width / 2.5,
-                      height: size.height / 3.8,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff00E7FF),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SalavatScreen(),
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xff0014FF),
-                            offset: Offset(0.0, 10),
-                            spreadRadius: -20,
-                            blurRadius: 30,
-                          ),
-                        ],
                       ),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(15),
-                            ),
-                            child: Image.asset('assets/images/salavat.jpg'),
+                      child: Container(
+                        width: size.width / 2.5,
+                        height: size.height / 3.8,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff00E7FF),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
                           ),
-                          const SizedBox(height: 10),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            child: Text(
-                              'یکصد مرتبه صلوات',
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xff0014FF),
+                              offset: Offset(0.0, 10),
+                              spreadRadius: -20,
+                              blurRadius: 30,
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                              child: Image.asset('assets/images/salavat.jpg'),
+                            ),
+                            const SizedBox(height: 10),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              child: Text(
+                                'یکصد مرتبه صلوات',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'isx',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.right,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            const Text(
+                              'همان ذکر پربرکتی که روایات متواتری درباره اهمیت آن وارد شده'
+                              '...',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16,
+                                fontSize: 10,
                                 fontFamily: 'isx',
-                                fontWeight: FontWeight.bold,
                               ),
-                              textAlign: TextAlign.right,
+                              textAlign: TextAlign.center,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'همان ذکر پربرکتی که روایات متواتری درباره اهمیت آن وارد شده'
-                            '...',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                              fontFamily: 'isx',
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],
